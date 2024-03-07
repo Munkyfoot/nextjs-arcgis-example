@@ -66,6 +66,8 @@ This is an example implementation of the ArcGIS JavaScript SDK in a Next.js app 
    npm start
    ```
 
+   **Note:** The development server takes a long time to load because it needs to compile the ArcGIS JavaScript SDK each time. The production server will start much faster.
+
 7. Open your browser and visit `http://localhost:3000` to see the app in action.
 
 ## Resources
