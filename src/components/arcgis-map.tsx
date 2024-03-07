@@ -44,8 +44,11 @@ export default function ArcGISMap() {
   }, [mapType])
 
   return (
-    <div className="w-full flex flex-col space-y-4">
-      <div className="w-full aspect-square bg-black/50" ref={mapDivRef} />
+    <div className="w-full h-full flex-grow flex flex-col space-y-4">
+      <div
+        className="flex-grow bg-black/50 rounded-md overflow-hidden"
+        ref={mapDivRef}
+      />
       <div className="flex space-x-4">
         <button
           className="bg-primary text-primary-foreground rounded-lg px-4 py-2"
