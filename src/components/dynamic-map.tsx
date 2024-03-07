@@ -4,4 +4,6 @@ const DynamicMap = dynamic(() => import("./arcgis-map"), {
   ssr: false,
 })
 
-export default () => <DynamicMap />
+const DynamicMapComponent = () => <DynamicMap />
+
+export default DynamicMapComponent
