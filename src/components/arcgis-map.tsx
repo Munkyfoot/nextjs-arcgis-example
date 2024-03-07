@@ -51,9 +51,24 @@ export default function ArcGISMap() {
         ref={mapDivRef}
       />
       <div className="flex space-x-4">
-        <Button onClick={() => setMapType("satellite")}>Satellite</Button>
-        <Button onClick={() => setMapType("topo")}>Topo</Button>
-        <Button onClick={() => setMapType("streets")}>Streets</Button>
+        <Button
+          variant={mapType === "satellite" ? "default" : "outline"}
+          onClick={() => setMapType("satellite")}
+        >
+          Satellite
+        </Button>
+        <Button
+          variant={mapType === "topo" ? "default" : "outline"}
+          onClick={() => setMapType("topo")}
+        >
+          Topo
+        </Button>
+        <Button
+          variant={mapType === "streets" ? "default" : "outline"}
+          onClick={() => setMapType("streets")}
+        >
+          Streets
+        </Button>
       </div>
     </div>
   )
