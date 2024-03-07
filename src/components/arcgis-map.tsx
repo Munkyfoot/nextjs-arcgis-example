@@ -1,10 +1,10 @@
 "use client"
 
-import esriConfig from "@arcgis/core/config"
+import { Button } from "@/components/ui/button"
 import Map from "@arcgis/core/Map"
+import esriConfig from "@arcgis/core/config"
 import MapView from "@arcgis/core/views/MapView"
 import { useEffect, useRef, useState } from "react"
-import { Button } from "@/components/ui/button"
 
 export default function ArcGISMap() {
   const mapDivRef = useRef<HTMLDivElement>(null)
