@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js ArcGIS JavaScript SDK Example
+
+This is an example implementation of the ArcGIS JavaScript SDK in a Next.js app using the App Router. The app displays a simple map view and allows the user to toggle between satellite, topographic, and street basemaps. It also utilizes the [shadcn/ui](https://ui.shadcn.com/) library for the user interface.
+
+## Features
+
+- Integration of ArcGIS JavaScript SDK with Next.js
+- App Router architecture
+- Toggle between satellite, topographic, and street basemaps
+- Clean and modern UI using shadcn/ui and TailwindCSS
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (version 20 or later)
+- npm (version 10 or later)
+- ArcGIS Developer account (for API key)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   git clone https://github.com/Munkyfoot/nextjs-arcgis-example.git
+   ```
 
-## Learn More
+2. Navigate to the project directory:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   cd nextjs-arcgis-example
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Install the dependencies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+4. Rename the `.env.example` file to `.env.local`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   mv .env.example .env.local
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. Open the `.env.local` file and replace `YOUR_API_KEY` with your actual ArcGIS API key.
+
+   ```
+   NEXT_PUBLIC_ARCGIS_API_KEY=YOUR_API_KEY
+   ```
+
+   **Note:** The current implementation uses the ArcGIS API key on the front end, which is not appropriate for production. In a production environment, you should securely store and retrieve the API key on the server-side to prevent unauthorized access.
+
+6. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+7. Open your browser and visit `http://localhost:3000` to see the app in action.
+
+## Resources
+
+- [Next.js](https://nextjs.org/)
+- [ArcGIS JavaScript SDK](https://developers.arcgis.com/javascript/)
+- [shadcn/ui](https://ui.shadcn.com/)
