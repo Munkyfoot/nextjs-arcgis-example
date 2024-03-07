@@ -50,7 +50,7 @@ export default function ArcGISMap() {
         className="flex-grow bg-black/50 rounded-md overflow-hidden"
         ref={mapDivRef}
       />
-      <div className="flex space-x-4">
+      <div className="flex flex-wrap gap-4">
         <Button
           variant={mapType === "satellite" ? "default" : "outline"}
           onClick={() => setMapType("satellite")}
