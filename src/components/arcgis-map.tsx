@@ -4,6 +4,7 @@ import esriConfig from "@arcgis/core/config"
 import Map from "@arcgis/core/Map"
 import MapView from "@arcgis/core/views/MapView"
 import { useEffect, useRef, useState } from "react"
+import { Button } from "@/components/ui/button"
 
 export default function ArcGISMap() {
   const mapDivRef = useRef<HTMLDivElement>(null)
@@ -50,24 +51,9 @@ export default function ArcGISMap() {
         ref={mapDivRef}
       />
       <div className="flex space-x-4">
-        <button
-          className="bg-primary text-primary-foreground rounded-lg px-4 py-2"
-          onClick={() => setMapType("satellite")}
-        >
-          Satellite
-        </button>
-        <button
-          className="bg-primary text-primary-foreground rounded-lg px-4 py-2"
-          onClick={() => setMapType("topo")}
-        >
-          Topo
-        </button>
-        <button
-          className="bg-primary text-primary-foreground rounded-lg px-4 py-2"
-          onClick={() => setMapType("streets")}
-        >
-          Streets
-        </button>
+        <Button onClick={() => setMapType("satellite")}>Satellite</Button>
+        <Button onClick={() => setMapType("topo")}>Topo</Button>
+        <Button onClick={() => setMapType("streets")}>Streets</Button>
       </div>
     </div>
   )
