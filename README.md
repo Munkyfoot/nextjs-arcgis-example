@@ -57,6 +57,15 @@ This is an example implementation of the ArcGIS JavaScript SDK in a Next.js app 
    npm run dev
    ```
 
+   OR
+
+   Build and start the production server:
+
+   ```bash
+   npm run build
+   npm start
+   ```
+
 7. Open your browser and visit `http://localhost:3000` to see the app in action.
 
 ## Resources
