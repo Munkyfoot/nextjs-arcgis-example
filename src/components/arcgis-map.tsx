@@ -6,14 +6,13 @@ import MapView from "@arcgis/core/views/MapView"
 import { useEffect, useRef, useState } from "react"
 
 export default function ArcGISMap() {
-  const mapRef = useRef<HTMLDivElement>(null)
+  const mapDivRef = useRef<HTMLDivElement>(null)
+  const mapRef = useRef<Map>()
+  const mapViewRef = useRef<MapView>()
 
   const [mapType, setMapType] = useState<"satellite" | "topo" | "streets">(
     "satellite"
   )
-
-  const [zoom, setZoom] = useState(4)
-  const [center, setCenter] = useState<[number, number]>([0, 0])
 
   useEffect(() => {
     esriConfig.apiKey = process.env.NEXT_PUBLIC_ARCGIS_API_KEY || ""
@@ -22,32 +21,31 @@ export default function ArcGISMap() {
       basemap: mapType,
     })
 
+    mapRef.current = arcgisMap
+
     const mapView = new MapView({
       map: arcgisMap,
-      container: mapRef.current || undefined,
-      zoom: zoom,
-      center: center,
+      container: mapDivRef.current || undefined,
+      zoom: 4,
+      center: [-98, 38],
     })
 
-    // Update zoom and center when map is zoomed
-    mapView.on("mouse-wheel", () => {
-      setZoom(mapView.zoom)
-      setCenter([mapView.center.longitude, mapView.center.latitude])
-    })
-
-    // Update center when map is moved
-    mapView.on("drag", () => {
-      setCenter([mapView.center.longitude, mapView.center.latitude])
-    })
+    mapViewRef.current = mapView
 
     return () => {
       mapView.destroy()
     }
-  }, [mapRef, mapType])
+  }, [mapDivRef])
+
+  useEffect(() => {
+    if (mapRef.current) {
+      mapRef.current.set("basemap", mapType)
+    }
+  }, [mapType])
 
   return (
     <div className="w-full flex flex-col space-y-4">
-      <div className="w-full aspect-square bg-black/50" ref={mapRef} />
+      <div className="w-full aspect-square bg-black/50" ref={mapDivRef} />
       <div className="flex space-x-4">
         <button
           className="bg-primary text-primary-foreground rounded-lg px-4 py-2"
