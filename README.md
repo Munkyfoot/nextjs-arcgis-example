@@ -49,7 +49,7 @@ This is an example implementation of the ArcGIS JavaScript SDK in a Next.js app 
    NEXT_PUBLIC_ARCGIS_API_KEY=YOUR_API_KEY
    ```
 
-   **Note:** The current implementation uses the ArcGIS API key on the front end, which is not appropriate for production. In a production environment, you should securely store and retrieve the API key on the server-side to prevent unauthorized access.
+   **Note:** Be sure to properly set scope and referer restrictions for your API key in the ArcGIS Developer dashboard before deploying your app.
 
 6. Start the development server:
 
