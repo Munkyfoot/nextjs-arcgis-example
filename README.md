@@ -49,7 +49,7 @@ This is an example implementation of the ArcGIS JavaScript SDK in a Next.js app 
    NEXT_PUBLIC_ARCGIS_API_KEY=YOUR_API_KEY
    ```
 
-   **Note:** Be sure to properly set scope and referer restrictions for your API key in the ArcGIS Developer dashboard before deploying your app.
+   **Note:** Be sure to properly set scope and referer restrictions for your API key in the ArcGIS Developer dashboard before deploying your app. Read more about [API key security](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/security-best-practices/#api-key-security).
 
 6. Start the development server:
 
